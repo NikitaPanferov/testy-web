@@ -1,7 +1,7 @@
 import axios from "axios";
 import { AuthResponse } from "../models/response/AuthResponse";
 
-export const API_URL = `https://testy-api.nikpanfer.ru/`;
+export const API_URL = `https://nikitapanferov-testy-api-3c3f.twc1.net`;
 
 const $api = axios.create({
 	withCredentials: true,
