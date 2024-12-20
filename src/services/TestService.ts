@@ -12,7 +12,7 @@ export default class TestService {
 	static async create(
 		test: Test
 	): Promise<AxiosResponse<CreateTestResponse>> {
-		return $api.post("api/test", { test });
+		return $api.post("api/test/", { test });
 	}
 
 	static async get(testId: string): Promise<AxiosResponse<GetTestResponse>> {
@@ -27,7 +27,7 @@ export default class TestService {
 	}
 
 	static async getTests(): Promise<AxiosResponse<TestsResponse>> {
-		return $api.get("api/test");
+		return $api.get("api/test/");
 	}
 
 	static async deleteTest(testId: string) {
@@ -37,10 +37,10 @@ export default class TestService {
 	static async updateTest(
 		test: Test
 	): Promise<AxiosResponse<CreateTestResponse>> {
-		return $api.put("api/test", test);
+		return $api.put("api/test/", test);
 	}
 
 	static async setIsOpen(testId: string, isOpen: boolean) {
-		return $api.post(`api/test/${testId}/set_is_open`, { isOpen });
+		return $api.post(`api/test/${testId}/set_is_open/`, { isOpen });
 	}
 }

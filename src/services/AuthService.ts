@@ -8,7 +8,7 @@ export default class AuthService {
 		email: string,
 		password: string
 	): Promise<AxiosResponse<AuthResponse>> {
-		return $api.post<AuthResponse>('auth/login', { email, password })
+		return $api.post<AuthResponse>('auth/login/', { email, password })
 	}
 
 	static async registration(
@@ -16,7 +16,7 @@ export default class AuthService {
 		name: string,
 		password: string
 	): Promise<AxiosResponse<AuthResponse>> {
-		return $api.post<AuthResponse>('auth/signup', { email, name, password })
+		return $api.post<AuthResponse>('auth/signup/', { email, name, password })
 	}
 
 	static async logout(): Promise<void> {
@@ -24,6 +24,6 @@ export default class AuthService {
 	}
 
 	static async checkAuth(): Promise<AxiosResponse<User>> {
-		return $api.get<User>('auth/me', { withCredentials: true })
+		return $api.get<User>('auth/me/', { withCredentials: true })
 	}
 }
